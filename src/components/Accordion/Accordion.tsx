@@ -1,18 +1,17 @@
 import React from "react";
 
 type AccordionPropsType = {
-    titleValue: string,
-    collapsed: boolean
+    titleValue: string
+    accordionCollapsed:boolean
+    setAccordionCollapsed: () =>void
 
 }
 
 function Accordion1(props: AccordionPropsType) {
     console.log("Accordion rendering")
     return (
-        <div><AccordionTitle title={props.titleValue}/>
-            {/*false===false получится ТРУ значит идем дальше: props.collapsed === false*/}
-            {/*2 вар: если НЕ ТРУ то разверни аккордион: !props.collapsed*/}
-            {!props.collapsed && <AccordionBody/>}
+        <div><AccordionTitle title={props.titleValue}  setAccordionCollapsed={props.setAccordionCollapsed}/>
+            {!props.accordionCollapsed && <AccordionBody/>}
         </div>)
 }
 
@@ -35,15 +34,18 @@ function Accordion1(props: AccordionPropsType) {
 //
 // }
 
+
+//----------------------------------------------------------------- как бы другая компонента
 type AccordionTitlePropsType = {
     title: string
+    setAccordionCollapsed: () =>void
 
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
     console.log("AccordionTitle rendering")
     return (
-        <h3>{props.title}</h3>
+        <h3 onClick={props.setAccordionCollapsed}>{props.title}</h3>
     );
 }
 
