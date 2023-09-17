@@ -7,6 +7,21 @@ import AccordionUncontrolled from "./components/AccordionUncontrolled/AccordionU
 import {RatingUncontrolled} from "./components/RatingUncontrolled/Rating";
 import {OnOff_controlled} from "./components/OnOff_Controlled/OnOff_controlled";
 
+import {
+    ControlledChecbox,
+    ControlledInput, ControlledSelected,
+    GetValueOfUncontrolledInputByButtonPress,
+    TrackValueOfUncontrolledInput
+} from "./components/Inputs_with_useRef/InputUncontrolled";
+
+import {log} from "util";
+import {Select_YA_Sdelela} from "./components/Select/Select_YA_Sdelela";
+import {SelectDimich} from "./components/Select/Select_Dimich";
+import AccordionUncontrolled_with_UseReducer from "./components/AccordionUncontrolled/AccordionUncontrolled";
+import AccordionUncontrolled_with_useReducer
+    from './components/AccordionUncontrolled_with_UseReducer/AccordionUncontrolled_with_useReducer';
+
+
 function App() {
     console.log("App rendering")
 
@@ -16,11 +31,38 @@ function App() {
     let [accordionCollapsed, setAccordionCollapsed] = useState(true)
     let [swintchOn, setSwitchOn] = useState(true)
 
+    {/*// это для контролируемого компонента Accordion1*/
+    }
+    const callback = (value: any) => {
+        console.log("some item was clicked", value)
+    }
+
+    // для кастомного селекта  Select_YA_Sdelela
+    const [value, setvalue] = useState("Выберите имя..")
+    const onChangeHandler = (title: string) => setvalue(title)
+
+
+    // для кастомного селекта  Dimich
+    const [valueDimich, setValueDimich] = useState("2")
+
     return (
         <div>
             {/*// это для контролируемого компонента*/}
-            {/*<Accordion1 titleValue={"Menu"} accordionCollapsed={accordionCollapsed} setAccordionCollapsed={()=>setAccordionCollapsed(!accordionCollapsed)}/>*/}
-            {/*<Accordion1 titleValue={"Users"} accordionCollapsed={accordionCollapsed} setAccordionCollapsed={()=>setAccordionCollapsed(!accordionCollapsed)}/>*/}
+            {/*<Accordion1*/}
+            {/*    titleValue={"Menu"}*/}
+            {/*    accordionCollapsed={accordionCollapsed}*/}
+            {/*    setAccordionCollapsed={()=>setAccordionCollapsed(!accordionCollapsed)}*/}
+            {/*    items={[]}*/}
+            {/*    onClick ={callback}*/}
+            {/*/>*/}
+            {/*<Accordion1*/}
+            {/*    titleValue={"Users"}*/}
+            {/*    accordionCollapsed={accordionCollapsed}*/}
+            {/*    setAccordionCollapsed={()=>setAccordionCollapsed(!accordionCollapsed)}*/}
+            {/*    items={[{title:"Lena", value:"1"},{title:"Sasha", value:"2"}]}*/}
+            {/*    onClick ={callback}*/}
+            {/*/>*/}
+
 
             {/*// это для контролируемого компонента*/}
             {/*<Rating ratingValue={ratingValue} onClick={setRatingValue}/>*/}
@@ -49,11 +91,51 @@ function App() {
             {/*<OnOff/>*/}
             {/*<OnOff/>*/}
 
-            {/*// это для НЕконтролируемого компонента*/}
+            {/*/!* это для НЕконтролируемого компонента*!/*/}
             {/*<AccordionUncontrolled titleValue={"Menu"}/>*/}
             {/*<AccordionUncontrolled titleValue={"Users"}/>*/}
+            {/*<AccordionUncontrolled titleValue={"blabla"}/>*/}
 
-            <AccordionUncontrolled titleValue={"blabla"}/>
+            {/* это для НЕконтролируемого АККОРДИОНА с UseReducer*/}
+            <AccordionUncontrolled_with_useReducer titleValue={"Menu"}/>
+
+
+            {/*// это для контролируемого инпута  с отслеживанием что ввели*/}
+            {/*<TrackValueOfUncontrolledInput/>*/}
+            <br/>
+            {/*<GetValueOfUncontrolledInputByButtonPress/>*/}
+            {/*<br/>*/}
+            {/*<ControlledInput/>*/}
+            {/*<br/>*/}
+
+            {/*// это для контролируемого чекбокса*/}
+            {/*<ControlledChecbox/>*/}
+
+            <br/>
+            {/*// это для контролируемого селекта*/}
+            {/*<ControlledSelected/>*/}
+
+            {/*/!* это для Селекта который делала я*!/*/}
+            {/*<Select_YA_Sdelela*/}
+            {/*    value={value}*/}
+            {/*    items={[{title: "Sasha", value: 1}, {title: "Lena", value: 2}, {title: "Anna", value: 3}]}*/}
+            {/*    onChange={onChangeHandler}*/}
+            {/*/>*/}
+
+
+            {/*// это для Селекта который делал Димыч*/}
+            {/*// <SelectDimich*/}
+            {/*//     onChange={setValueDimich}*/}
+            {/*//     value={valueDimich}*/}
+            {/*//     items={[*/}
+            {/*//         {value: "1", title: "Minsk1"},*/}
+            {/*//         {value: "2", title: "Minsk2"},*/}
+            {/*//         {value: "3", title: "Minsk3"}]*/}
+            {/*//     }/>*/}
+            {/*//    */}
+
+
+
         </div>)
 }
 

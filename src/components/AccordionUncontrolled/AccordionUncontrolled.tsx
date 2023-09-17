@@ -1,24 +1,25 @@
-import React, {useState} from "react";
+import React, {useReducer, useState} from 'react';
+import {reducer} from './reducer';
 
 type AccordionPropsType = {
     titleValue: string,
 }
-
 type AccordionTitlePropsType = {
     title: string
-    onClick:()=>void
+    onClick: () => void
 }
 
-
 function AccordionUncontrolled(props: AccordionPropsType) {
-    console.log("Accordion rendering")
+    console.log('Accordion rendering')
 
-    const [collapsed, setCollapsed] = useState(false)
+        const [collapsed, setCollapsed] = useState(false)
 
-    const onClickHandle=()=>{
-        setCollapsed(!collapsed)
+
+    const onClickHandle = () => {
+        setCollapsed(true)
         console.log(collapsed)
     }
+
 
     return (
         <div>
@@ -30,14 +31,14 @@ function AccordionUncontrolled(props: AccordionPropsType) {
 
 
 function AccordionTitle(props: AccordionTitlePropsType) {
-    console.log("AccordionTitle rendering")
+    console.log('AccordionTitle rendering')
     return (
         <h3 onClick={props.onClick}>{props.title}</h3>
     );
 }
 
 function AccordionBody() {
-    console.log("AccordionBody rendering")
+    console.log('AccordionBody rendering')
     return (
         <ul>
             <li>7</li>
