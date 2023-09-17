@@ -20,6 +20,7 @@ import {SelectDimich} from "./components/Select/Select_Dimich";
 import AccordionUncontrolled_with_UseReducer from "./components/AccordionUncontrolled/AccordionUncontrolled";
 import AccordionUncontrolled_with_useReducer
     from './components/AccordionUncontrolled_with_UseReducer/AccordionUncontrolled_with_useReducer';
+import Example1 from './components/ReactMemo/Example1';
 
 
 function App() {
@@ -134,6 +135,9 @@ function App() {
             {/*//     }/>*/}
             {/*//    */}
 
+
+{/*            это для REACT.memo*/}
+            <Example1/>
 
 
         </div>)
