@@ -1,30 +1,33 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordion1 from "./components/Accordion/Accordion";
-import {Rating, RatingvalueType} from "./components/Rating/Rating";
-import {OnOff} from "./components/OnOff/OnOff";
-import AccordionUncontrolled from "./components/AccordionUncontrolled/AccordionUncontrolled";
-import {RatingUncontrolled} from "./components/RatingUncontrolled/Rating";
-import {OnOff_controlled} from "./components/OnOff_Controlled/OnOff_controlled";
+import Accordion1 from './components/Accordion/Accordion';
+import {Rating, RatingvalueType} from './components/Rating/Rating';
+import {OnOff} from './components/OnOff/OnOff';
+import AccordionUncontrolled from './components/AccordionUncontrolled/AccordionUncontrolled';
+import {RatingUncontrolled} from './components/RatingUncontrolled/Rating';
+import {OnOff_controlled} from './components/OnOff_Controlled/OnOff_controlled';
 
 import {
     ControlledChecbox,
     ControlledInput, ControlledSelected,
     GetValueOfUncontrolledInputByButtonPress,
     TrackValueOfUncontrolledInput
-} from "./components/Inputs_with_useRef/InputUncontrolled";
+} from './components/Inputs_with_useRef/InputUncontrolled';
 
-import {log} from "util";
-import {Select_YA_Sdelela} from "./components/Select/Select_YA_Sdelela";
-import {SelectDimich} from "./components/Select/Select_Dimich";
-import AccordionUncontrolled_with_UseReducer from "./components/AccordionUncontrolled/AccordionUncontrolled";
+import {log} from 'util';
+import {Select_YA_Sdelela} from './components/Select/Select_YA_Sdelela';
+import {SelectDimich} from './components/Select/Select_Dimich';
+import AccordionUncontrolled_with_UseReducer from './components/AccordionUncontrolled/AccordionUncontrolled';
 import AccordionUncontrolled_with_useReducer
     from './components/AccordionUncontrolled_with_UseReducer/AccordionUncontrolled_with_useReducer';
 import Example1 from './components/ReactMemo/Example1';
+import Example2 from './components/ReactMemo/Example2';
+import HelpsToReactMemo from './components/ReactMemo/Example3';
+import {Example4Select} from './components/ReactMemo/Example4Select';
 
 
 function App() {
-    console.log("App rendering")
+    console.log('App rendering')
 
     {/*// это для контролируемого компонента*/
     }
@@ -35,16 +38,16 @@ function App() {
     {/*// это для контролируемого компонента Accordion1*/
     }
     const callback = (value: any) => {
-        console.log("some item was clicked", value)
+        console.log('some item was clicked', value)
     }
 
     // для кастомного селекта  Select_YA_Sdelela
-    const [value, setvalue] = useState("Выберите имя..")
+    const [value, setvalue] = useState('Выберите имя..')
     const onChangeHandler = (title: string) => setvalue(title)
 
 
     // для кастомного селекта  Dimich
-    const [valueDimich, setValueDimich] = useState("2")
+    const [valueDimich, setValueDimich] = useState('2')
 
     return (
         <div>
@@ -98,7 +101,7 @@ function App() {
             {/*<AccordionUncontrolled titleValue={"blabla"}/>*/}
 
             {/* это для НЕконтролируемого АККОРДИОНА с UseReducer*/}
-            <AccordionUncontrolled_with_useReducer titleValue={"Menu"}/>
+            {/*            <AccordionUncontrolled_with_useReducer titleValue={'Menu'}/>*/}
 
 
             {/*// это для контролируемого инпута  с отслеживанием что ввели*/}
@@ -125,19 +128,21 @@ function App() {
 
 
             {/*// это для Селекта который делал Димыч*/}
-            {/*// <SelectDimich*/}
-            {/*//     onChange={setValueDimich}*/}
-            {/*//     value={valueDimich}*/}
-            {/*//     items={[*/}
-            {/*//         {value: "1", title: "Minsk1"},*/}
-            {/*//         {value: "2", title: "Minsk2"},*/}
-            {/*//         {value: "3", title: "Minsk3"}]*/}
-            {/*//     }/>*/}
-            {/*//    */}
+{/*            <SelectDimich
+                onChange={setValueDimich}
+                value={valueDimich}
+                items={[
+                    {value: '1', title: 'Minsk1'},
+                    {value: '2', title: 'Minsk2'},
+                    {value: '3', title: 'Minsk3'}]
+                }/>*/}
 
+            <Example4Select/>
 
-{/*            это для REACT.memo*/}
-            <Example1/>
+            {/*            это для REACT.memo*/}
+            {/*            <Example1/>*/}
+            {/*            <Example2/>*/}
+{/*            <HelpsToReactMemo/>*/}
 
 
         </div>)
@@ -148,7 +153,7 @@ type PageTitlePropsType = {
 }
 
 function PageTitle(props: PageTitlePropsType) {
-    console.log("PageTitle rendering")
+    console.log('PageTitle rendering')
     return (
         <h1>{props.title}</h1>)
 }
