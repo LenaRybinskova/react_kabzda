@@ -22,9 +22,8 @@ import AccordionUncontrolled_with_useReducer
     from './components/AccordionUncontrolled_with_UseReducer/AccordionUncontrolled_with_useReducer';
 import Example1 from './components/ReactMemo/Example1';
 import Example2 from './components/ReactMemo/Example2';
-
+import HelpsToReactMemo from './components/ReactMemo/Example3';
 import {Example4Select} from './components/ReactMemo/Example4Select';
-import LikesUseCallBack from './components/ReactMemo/Example3WithUseMemo';
 
 
 function App() {
@@ -138,13 +137,13 @@ function App() {
                     {value: '3', title: 'Minsk3'}]
                 }/>*/}
 
-{/*            <Example4Select/>*/}
+            <Example4Select/>
 
             {/*            это для REACT.memo*/}
             {/*            <Example1/>*/}
             {/*            <Example2/>*/}
 {/*            <HelpsToReactMemo/>*/}
-<LikesUseCallBack/>
+
 
         </div>)
 }
