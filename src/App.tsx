@@ -24,7 +24,7 @@ import Example1 from './components/ReactMemo/Example1';
 import Example2 from './components/ReactMemo/Example2';
 
 import {Example4Select} from './components/ReactMemo/Example4Select';
-import LikesUseCallBack from './components/ReactMemo/Example3WithUseMemo';
+import LikesUseCallBack from './components/ReactMemo/LikesUseCallBack';
 
 
 function App() {
