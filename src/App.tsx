@@ -25,6 +25,9 @@ import Example2 from './components/ReactMemo/Example2';
 
 import {Example4Select} from './components/ReactMemo/Example4Select';
 import LikesUseCallBack from './components/ReactMemo/LikesUseCallBack';
+import UseStateWithUseMemo from './components/useState/UseStateWithUseMemo';
+import UseStateWithSelfHook from './components/useState/UseStateWithSelfHook';
+import UseStateFunction from './components/useState/UseStateFunction';
 
 
 function App() {
@@ -144,7 +147,11 @@ function App() {
             {/*            <Example1/>*/}
             {/*            <Example2/>*/}
 {/*            <HelpsToReactMemo/>*/}
-<LikesUseCallBack/>
+{/*<LikesUseCallBack/>*/}
+
+{/*            <UseStateWithUseMemo/>*/}
+{/*            <UseStateWithSelfHook/>*/}
+            <UseStateFunction/>
 
         </div>)
 }
