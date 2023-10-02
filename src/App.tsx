@@ -28,6 +28,11 @@ import LikesUseCallBack from './components/ReactMemo/LikesUseCallBack';
 import UseStateWithUseMemo from './components/useState/UseStateWithUseMemo';
 import UseStateWithSelfHook from './components/useState/UseStateWithSelfHook';
 import UseStateFunction from './components/useState/UseStateFunction';
+import {UseEffectExample1} from './components/useEffect/UseEffectExample1';
+import {UseEffectExample2} from './components/useEffect/UseEffectExample2';
+import {UseEffectExampleSetTimeOut} from './components/useEffect/UseEffectExampleSetTimeOut';
+import {UseEffectExampleSetInterval} from './components/useEffect/UseEffectExampleSetInterval';
+import HwWatchLena from './components/useEffect/HW_WatchLena';
 
 
 function App() {
@@ -132,7 +137,7 @@ function App() {
 
 
             {/*// это для Селекта который делал Димыч*/}
-{/*            <SelectDimich
+            {/*            <SelectDimich
                 onChange={setValueDimich}
                 value={valueDimich}
                 items={[
@@ -141,18 +146,23 @@ function App() {
                     {value: '3', title: 'Minsk3'}]
                 }/>*/}
 
-{/*            <Example4Select/>*/}
+            {/*            <Example4Select/>*/}
 
             {/*            это для REACT.memo*/}
             {/*            <Example1/>*/}
             {/*            <Example2/>*/}
-{/*            <HelpsToReactMemo/>*/}
-{/*<LikesUseCallBack/>*/}
+            {/*            <HelpsToReactMemo/>*/}
+            {/*<LikesUseCallBack/>*/}
 
-{/*            <UseStateWithUseMemo/>*/}
-{/*            <UseStateWithSelfHook/>*/}
-            <UseStateFunction/>
+            {/*            <UseStateWithUseMemo/>*/}
+            {/*            <UseStateWithSelfHook/>*/}
+            {/*            <UseStateFunction/>*/}
 
+{/*            <UseEffectExample1/>*/}
+{/*            <UseEffectExample2/>*/}
+{/*            <UseEffectExampleSetTimeOut/>*/}
+
+            <HwWatchLena/>
         </div>)
 }
 
