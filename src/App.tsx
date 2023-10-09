@@ -33,6 +33,10 @@ import {UseEffectExample2} from './components/useEffect/UseEffectExample2';
 import {UseEffectExampleSetTimeOut} from './components/useEffect/UseEffectExampleSetTimeOut';
 import {UseEffectExampleSetInterval} from './components/useEffect/UseEffectExampleSetInterval';
 import HwWatchLena from './components/useEffect/HW_WatchLena';
+import HW_WatchLena from './components/useEffect/HW_WatchLena';
+import {Clock} from './components/useEffect/Clock/HW_WatchDimych';
+
+
 
 
 function App() {
@@ -158,11 +162,14 @@ function App() {
             {/*            <UseStateWithSelfHook/>*/}
             {/*            <UseStateFunction/>*/}
 
-{/*            <UseEffectExample1/>*/}
-{/*            <UseEffectExample2/>*/}
-{/*            <UseEffectExampleSetTimeOut/>*/}
+            {/*            <UseEffectExample1/>*/}
+            {/*            <UseEffectExample2/>*/}
+            {/*            <UseEffectExampleSetTimeOut/>*/}
 
-            <HwWatchLena/>
+            {/*            <HwWatchLena/>*/}
+{/*            <ClockDigital mode={"digital"}/>*/}
+            <Clock mode={"analog"}/>
+
         </div>)
 }
 

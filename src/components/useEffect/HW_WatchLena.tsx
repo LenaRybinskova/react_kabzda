@@ -1,44 +1,29 @@
 import React, {useEffect, useState} from 'react';
 
+const twoDigitsString = (n: number) => {
+    return n < 10 ? `0${n}` : n
+}
+
 const HwWatchLena = () => {
     console.log('рендер компоненты')
 
-    const [hours, setHours] = useState(()=> new Date().getHours())
-    const [minuts, setMinuts] = useState(()=> new Date().getMinutes())
-    const [seconds, setSeconds] = useState(()=> new Date().getSeconds())
-
+    const [date, setDate] = useState(new Date())
     useEffect(() => {
-        console.log('эфф')
-        setInterval(()=>{
-            setHours(()=> new Date().getHours())
-        },1000)
+        const idInterval = setInterval(() => {setDate(new Date())}, 1000)
+        return clearInterval(idInterval)
     }, [])
 
-    useEffect(() => {
-        console.log('эфф')
-        setInterval(()=>{
-            setMinuts(()=> new Date().getMinutes())
-        },1000)
-    }, [])
-
-    useEffect(() => {
-        console.log('эфф')
-        setInterval(()=>{
-            setSeconds(()=> new Date().getSeconds())
-        },1000)
-    }, [])
-
-    const style:React.CSSProperties = {
-        display:'flex',
-        flexDirection:'row',
-        justifyContent:'center',
-        fontSize:50,
-        fontWeight:'bold'
+    const style: React.CSSProperties = {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        fontSize: 50,
+        fontWeight: 'bold'
     };
 
     return (
         <div style={style}>
-            {hours}:{minuts}:{seconds}
+            {twoDigitsString(date.getHours())}:{twoDigitsString(date.getMinutes())}:{twoDigitsString(date.getSeconds())}
         </div>
     );
 };
