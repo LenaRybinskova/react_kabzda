@@ -35,8 +35,8 @@ import {UseEffectExampleSetInterval} from './components/useEffect/UseEffectExamp
 import HwWatchLena from './components/useEffect/HW_WatchLena';
 import HW_WatchLena from './components/useEffect/HW_WatchLena';
 import {Clock} from './components/useEffect/Clock/HW_WatchDimych';
-
-
+import ResetEffectExample from './components/useEffect/ResetEffectExample';
+import KeyTrackerExample from './components/useEffect/KeyTrackerExample';
 
 
 function App() {
@@ -167,9 +167,12 @@ function App() {
             {/*            <UseEffectExampleSetTimeOut/>*/}
 
             {/*            <HwWatchLena/>*/}
-{/*            <ClockDigital mode={"digital"}/>*/}
-            <Clock mode={"analog"}/>
+            {/*            <ClockDigital mode={"digital"}/>*/}
+            {/*            <Clock mode={"analog"}/>*/}
 
+
+            {/*            <ResetEffectExample/>*/}
+            <KeyTrackerExample/>
         </div>)
 }
 
